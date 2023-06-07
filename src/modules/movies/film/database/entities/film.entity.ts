@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Film {
     @PrimaryGeneratedColumn()
-    film_id: number;
+    filmId: number;
 
     @Column()
     title: string;
@@ -12,31 +12,31 @@ export class Film {
     description: string;
 
     @Column()
-    release_year: number;
+    releaseYear: number;
 
     @Column()
-    language_id: number;
+    languageId: number;
 
     @Column()
-    rental_duration: number;
+    rentalDuration: number;
 
     @Column()
-    rental_rate: number;
+    rentalRate: number;
 
     @Column()
     length: number;
 
     @Column()
-    replacement_cost: number;
+    replacementCost: number;
 
     @Column()
     rating: string;
 
     @Column()
-    last_update: Date;
+    lastUpdate: Date;
 
     @Column()
-    special_features: string;
+    specialFeatures: string;
 
     @Column()
     fulltext: string;
