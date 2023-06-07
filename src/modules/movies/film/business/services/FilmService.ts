@@ -1,9 +1,6 @@
-import { Film } from '../../database/entities/film.entity';
-
 import { IFilmRepository } from '../../database/repositories/IFilmRepository';
 
-import { CreateFilmDTO } from '../../dtos/CreateFilmDTO';
-import { UpdateFilmDTO } from '../../dtos/UpdateFilmDTO';
+import { FilmDTO,  CreateFilmDTO, UpdateFilmDTO } from '../../dtos/FilmDTO';
 
 import { IFilmService } from './IFilmService';
 
@@ -14,19 +11,19 @@ export class FilmService implements IFilmService {
         this.filmRepository = filmRepository;
     }
 
-    async getFilms(): Promise<Film[]> {
+    async getFilms(): Promise<FilmDTO[]> {
         return this.filmRepository.getFilms();
     }
 
-    async getFilmById(film_id: number): Promise<Film> {
+    async getFilmById(film_id: number): Promise<FilmDTO> {
         return this.filmRepository.getFilmById(film_id);
     }
 
-    async createFilm(film: CreateFilmDTO): Promise<Film> {
+    async createFilm(film: CreateFilmDTO): Promise<FilmDTO> {
         return this.filmRepository.createFilm(film);
     }
 
-    async updateFilm(id: number, film: UpdateFilmDTO): Promise<Film> {
+    async updateFilm(id: number, film: UpdateFilmDTO): Promise<FilmDTO> {
         return this.filmRepository.updateFilm(id, film);
     }
 

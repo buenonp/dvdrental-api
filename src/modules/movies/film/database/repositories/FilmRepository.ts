@@ -3,8 +3,7 @@ import { Repository } from 'typeorm';
 import { Film } from '../entities/film.entity';
 import { IFilmRepository } from './IFilmRepository';
 
-import { CreateFilmDTO } from '../../dtos/CreateFilmDTO';
-import { UpdateFilmDTO } from '../../dtos/UpdateFilmDTO';
+import { CreateFilmDTO, UpdateFilmDTO } from '../../dtos/FilmDTO';
 
 import dataSource from '@config/database/typeorm/data-source';
 
