@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
 
 const dataSource = new DataSource({
     type: "postgres",
@@ -9,6 +10,7 @@ const dataSource = new DataSource({
     database: "dvdrental2",
     synchronize: true,
     logging: false,
+    namingStrategy: new SnakeNamingStrategy(),
     entities: ["src/modules/**/entities/*.entity.ts"],
 });
 
