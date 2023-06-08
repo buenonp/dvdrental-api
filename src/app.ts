@@ -1,6 +1,7 @@
 import "reflect-metadata";
 
 import "./config/database/typeorm";
+import "./config/container/tsyringe";
 
 import express from "express";
 
