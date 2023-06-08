@@ -4,7 +4,7 @@ import "./config/database/typeorm";
 
 import express from "express";
 
-import { router } from "@shared/api/routes";
+import { router } from "@/shared/api/routes";
 
 const app = express();
 
