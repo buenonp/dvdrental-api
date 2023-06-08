@@ -3,11 +3,11 @@ import { SnakeNamingStrategy } from "typeorm-naming-strategies";
 
 const dataSource = new DataSource({
     type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "123456",
-    database: "dvdrental2",
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     synchronize: true,
     logging: false,
     namingStrategy: new SnakeNamingStrategy(),
