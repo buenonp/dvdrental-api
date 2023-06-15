@@ -14,5 +14,5 @@ export class FilmDTO {
     fulltext: string;
 }
 
-export type CreateFilmDTO = Omit<FilmDTO, 'filmId'>;
+export type CreateFilmDTO = Omit<FilmDTO, 'filmId' | 'lastUpdate'>;
 export type UpdateFilmDTO = Partial<FilmDTO>;
