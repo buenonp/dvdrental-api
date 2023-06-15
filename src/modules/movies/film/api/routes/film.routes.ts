@@ -1,17 +1,12 @@
-import express from 'express';
-
+import { Router } from 'express';
 import { container } from 'tsyringe';
 
-import { FilmController } from '../controllers/FilmController';
+import baseRoutes from '@/modules/base/base.routes';
 
-const router = express.Router();
+const filmRouter = Router();
 
-const filmController: FilmController = container.resolve('FilmController');
+const filmController = container.resolve('FilmController');
 
-router.get('/', (req, res) => filmController.getItems(req, res));
-router.get('/:id', (req, res) => filmController.getItemById(req, res));
-router.post('/', (req, res) => filmController.createItem(req, res));
-router.put('/:id', (req, res) => filmController.updateItem(req, res));
-router.delete('/:id', (req, res) => filmController.deleteItem(req, res));
+filmRouter.use('/', baseRoutes(filmController));
 
-export default router;
+export default filmRouter;
