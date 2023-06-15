@@ -1,6 +1,7 @@
-import { BaseService } from './BaseService';
-import { BaseRepository } from '@/modules/base/BaseRepository';
 import { injectable, inject } from 'tsyringe';
+
+import { BaseService } from './BaseService';
+import { BaseRepository } from './BaseRepository';
 
 @injectable()
 export class BaseServiceImpl<T, U, V> implements BaseService<T, U, V> {

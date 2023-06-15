@@ -1,10 +1,12 @@
 import { inject, injectable } from 'tsyringe';
 import { Request, Response } from 'express';
-import { BaseService } from '@/modules/base/BaseService';
-import { BaseController } from '@/modules/base/BaseController';
+
+import { BaseController } from './BaseController';
+import { BaseService } from './BaseService';
 
 @injectable()
 export class BaseControllerImpl<T, U, V> implements BaseController {
+    
     constructor(
         @inject("BaseService") 
         private baseService: BaseService<T, U, V>
